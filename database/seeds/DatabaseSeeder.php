@@ -7,14 +7,16 @@ class DatabaseSeeder extends Seeder
 {
     protected $tables =
         [
-
+            'skills',
+            'project_types',
+            'projects'
 
         ];
 
     protected $seeders =
         [
-
-
+            ProjectTypeSeeder::class,
+            SkillSeeder::class
         ];
 
     /**

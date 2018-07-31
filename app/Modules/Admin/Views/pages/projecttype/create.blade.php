@@ -1,38 +1,23 @@
 @extends('Admin::layouts.default')
 
-@section('title','SKILL')
+@section('title','PROJECT TYPE')
 
 @section('content')
     <div class="row">
         <div class="col">
             <div class="card">
-                {!! Form::open(['route'=>'admin.skill.store', 'class' =>'form']) !!}
+                {!! Form::open(['route'=>'admin.projecttype.store', 'class' =>'form']) !!}
                 <div class="card-header">
-                    <strong>SKILL</strong>
+                    <strong>PROJECT TYPE</strong>
                 </div>
                 <div class="card-body">
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="name">Name</label>
+                        <label class="col-md-3 col-form-label" for="name">Project Type Name</label>
                         <div class="col-md-9">
                             <input type="text" class="form-control" name="name">
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label" >Image:</label>
-                        <div class="col-md-9">
-                            <div class="input-group">
-                            <span class="input-group-btn">
-                                <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary text-white">
-                                    <i class="fa fa-picture-o"></i> Chọn
-                                </a>
-                            </span>
-                                <input id="thumbnail" class="form-control" type="hidden" name="img_url">
-                            </div>
-                            <img id="holder" style="margin-top:15px;max-height:100px;">
-                        </div>
-                    </div>
-                    <!--/.row-->
                 </div>
                 <div class="card-footer">
                     <div class="col-md-9 offset-md-3">
@@ -54,7 +39,6 @@
         const url = "{{url('/')}}"
         init_tinymce(url);
         // BUTTON ALONE
-        init_btnImage(url,'#lfm');
 
     </script>
 @stop

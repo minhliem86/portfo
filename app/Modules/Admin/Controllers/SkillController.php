@@ -48,7 +48,7 @@ class SkillController extends Controller
                 </label>
               ';
                 })->editColumn('img_url',function($skill){
-                    return '<img src="'.asset('public/uploads/'.$skill->img_url).'" width="60" class="img-fluid">';
+                    return $skill->img_url ? '<img src="'.asset('public/uploads/'.$skill->img_url).'" width="60" class="img-fluid">' : null;
                 })->filter(function($query) use ($request){
                     if (request()->has('name')) {
                         $query->where('name', 'like', "%{$request->input('name')}%");

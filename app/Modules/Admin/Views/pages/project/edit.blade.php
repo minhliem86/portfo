@@ -1,16 +1,22 @@
 @extends('Admin::layouts.default')
 
-@section('title','SKILL')
+@section('title','PROJECT')
 
 @section('content')
     <div class="row">
         <div class="col">
             <div class="card">
-                {!!  Form::model($inst, ['route'=>['admin.skill.update',$inst->id], 'method'=>'put' ])!!}
+                {!!  Form::model($inst, ['route'=>['admin.project.update',$inst->id], 'method'=>'put' ])!!}
                 <div class="card-header">
-                    <strong>SKILL</strong>
+                    <strong>PROJECT</strong>
                 </div>
                 <div class="card-body">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="name">Project Type</label>
+                        <div class="col-md-9">
+                            {!! Form::select('project_type',['' => 'Select Project Type'] + $project_type, $inst->project_type_id, ['class' => 'form-control', 'required']) !!}
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="name">Name</label>
                         <div class="col-md-9">

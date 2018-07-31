@@ -1,14 +1,14 @@
 @extends('Admin::layouts.default')
 
-@section('title','SKILL')
+@section('title','PROJECT TYPE')
 
 @section('content')
     <div class="row">
         <div class="col">
             <div class="card">
-                {!!  Form::model($inst, ['route'=>['admin.skill.update',$inst->id], 'method'=>'put' ])!!}
+                {!!  Form::model($inst, ['route'=>['admin.projecttype.update',$inst->id], 'method'=>'put' ])!!}
                 <div class="card-header">
-                    <strong>SKILL</strong>
+                    <strong>PROJECT TYPE</strong>
                 </div>
                 <div class="card-body">
                     <div class="form-group row">
@@ -34,20 +34,6 @@
                             </label>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Images:</label>
-                        <div class="col-md-9">
-                            <div class="input-group">
-                             <span class="input-group-btn">
-                               <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary btn-sm text-white">
-                                 <i class="fa fa-picture-o"></i> Choose
-                               </a>
-                             </span>
-                                {{Form::hidden('img_url',old('img_url'), ['class'=>'form-control', 'id'=>'thumbnail' ])}}
-                            </div>
-                            <img id="holder" style="margin-top:15px;max-height:100px;" src="{{asset('public/uploads/'.$inst->img_url)}}">
-                        </div>
-                    </div>
                 </div>
                 <div class="card-footer">
                     <div class="col-md-9 offset-md-3">
@@ -70,7 +56,6 @@
         const url = "{{url('/')}}"
         init_tinymce(url);
         // BUTTON ALONE
-        init_btnImage(url,'#lfm');
 
         $(document).on('change', 'input[name=status]', function(){
             if($(this).prop('checked')){

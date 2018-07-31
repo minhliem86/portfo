@@ -36,6 +36,24 @@ Route::namespace('App\Modules\Admin\Controllers')
                 Route::get('/profile', 'ProfileController@index')->name('profile.index');
                 Route::post('/profile/changePass', 'ProfileController@postChangePass')->name('profile.changePass');
 
+                /*SKILL*/
+                Route::post('/skill/deleteAll', 'SkillController@deleteAll')->name('skill.deleteAll');
+                Route::post('/skill/updateStatus', 'SkillController@updateStatus')->name('skill.updateStatus');
+                Route::post('/skill/postAjaxUpdateOrder', 'SkillController@postAjaxUpdateOrder')->name('skill.postAjaxUpdateOrder');
+                Route::resource('/skill','SkillController');
+
+                /*PROJECT TYPE*/
+                Route::post('/projecttype/deleteAll', 'ProjectTypesController@deleteAll')->name('projecttype.deleteAll');
+                Route::post('/projecttype/updateStatus', 'ProjectTypesController@updateStatus')->name('projecttype.updateStatus');
+                Route::post('/projecttype/postAjaxUpdateOrder', 'ProjectTypesController@postAjaxUpdateOrder')->name('projecttype.postAjaxUpdateOrder');
+                Route::resource('/projecttype','ProjectTypesController');
+
+                /*PROJECT*/
+                Route::post('/project/deleteAll', 'ProjectController@deleteAll')->name('project.deleteAll');
+                Route::post('/project/updateStatus', 'ProjectController@updateStatus')->name('project.updateStatus');
+                Route::post('/project/postAjaxUpdateOrder', 'ProjectController@postAjaxUpdateOrder')->name('project.postAjaxUpdateOrder');
+                Route::resource('/project','ProjectController');
+
                 /*USER MANAGEMENT*/
                 Route::get('user/getData',  'UserManagementController@getData')->name('user.getData');
                 Route::post('user/deleteAll', 'UserManagementController@deleteAll')->name('user.deleteAll');
