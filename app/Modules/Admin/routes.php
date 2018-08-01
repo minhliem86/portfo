@@ -42,6 +42,12 @@ Route::namespace('App\Modules\Admin\Controllers')
                 Route::post('/skill/postAjaxUpdateOrder', 'SkillController@postAjaxUpdateOrder')->name('skill.postAjaxUpdateOrder');
                 Route::resource('/skill','SkillController');
 
+                /*SERVICE*/
+                Route::post('/service/deleteAll', 'ServiceController@deleteAll')->name('service.deleteAll');
+                Route::post('/service/updateStatus', 'ServiceController@updateStatus')->name('service.updateStatus');
+                Route::post('/service/postAjaxUpdateOrder', 'ServiceController@postAjaxUpdateOrder')->name('service.postAjaxUpdateOrder');
+                Route::resource('/service','ServiceController');
+
                 /*PROJECT TYPE*/
                 Route::post('/projecttype/deleteAll', 'ProjectTypesController@deleteAll')->name('projecttype.deleteAll');
                 Route::post('/projecttype/updateStatus', 'ProjectTypesController@updateStatus')->name('projecttype.updateStatus');

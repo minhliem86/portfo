@@ -1,21 +1,14 @@
 @extends('Admin::layouts.default')
 
-@section('title','SKILL')
+@section('title','SERVICE')
 
 @section('content')
-    @if($errors->any())
-        <div class="alert alert-danger alert-dismissable">
-            @foreach($errors->all() as $error)
-            <p>{!! $error !!}</p>
-            @endforeach
-        </div>
-    @endif
     <div class="row">
         <div class="col">
             <div class="card">
-                {!!  Form::model($inst, ['route'=>['admin.skill.update',$inst->id], 'method'=>'put' ])!!}
+                {!!  Form::model($inst, ['route'=>['admin.service.update',$inst->id], 'method'=>'put' ])!!}
                 <div class="card-header">
-                    <strong>SKILL</strong>
+                    <strong>SERVICE</strong>
                 </div>
                 <div class="card-body">
                     <div class="form-group row">
@@ -24,11 +17,10 @@
                             {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
                         </div>
                     </div>
-
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="name">Power</label>
+                        <label class="col-md-3 col-form-label" for="description">Description</label>
                         <div class="col-md-9">
-                            {!! Form::text('power', old('power'), ['class' => 'form-control']) !!}
+                            {!! Form::textarea('description', '', old('desctiption'), ['class' => 'form-control']) !!}
                         </div>
                     </div>
 

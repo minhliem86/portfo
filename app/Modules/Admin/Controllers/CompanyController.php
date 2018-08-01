@@ -6,21 +6,20 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Repositories\CompanyRepository;
 
 class CompanyController extends Controller
 {
-    public function getInformation(CompanyRepository $companyRepo, Request $request)
+    public function getInformation( Request $request)
     {
       if($request->isMethod('put')){
-        $id = $companyRepo->getFirst()->id;
+        $id = \App\Models\Company::first()->id;
         $data = [
             'email' => $request->input('email'),
             'address' => $request->input('address'),
             'phone' => $request->input('phone'),
             'map' => $request->input('map'),
         ];
-        $rs = $companyRepo->update($data, $id);
+        $rs = \DB::table('companies')->update($data, $id);
         if(!$rs){
             return redirect()->back()->with('error', 'Fail to save !');
         }
@@ -33,13 +32,13 @@ class CompanyController extends Controller
             'phone' => $request->input('phone'),
             'map' => $request->input('map'),
         ];
-        $rs = $companyRepo->create($data);
+        $rs = \App\Models\Company::create($data);
         if(!$rs){
             return redirect()->back()->with('error', 'Fail to save !');
         }
         return redirect()->back()->with('success', 'Saved !');
       }
-      $inst = $companyRepo->getFirst();
+      $inst = \App\Models\Company::first();
       // dd($inst);
       return view('Admin::pages.company.index', compact('inst'));
     }

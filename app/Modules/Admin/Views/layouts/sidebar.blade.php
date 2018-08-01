@@ -6,18 +6,24 @@
             </li>
 
             <li class="nav-item">
-                <a href="{!! route('admin.skill.index') !!}" class="nav-link active"><i class="icon-drawer"></i> Skill</a>
+                <a href="{!! route('admin.skill.index') !!}" class="nav-link {!! LP_lib::setActive(2,'skill') !!}"><i class="icon-drawer"></i> Skills</a>
+            </li>
+            <li class="nav-item">
+                <a href="{!! route('admin.service.index') !!}" class="nav-link {!! LP_lib::setActive(2,'service') !!}"><i class="icon-drawer"></i> Services</a>
             </li>
 
             <li class="nav-item">
-                <a href="{!! route('admin.projecttype.index') !!}" class="nav-link active"><i class="icon-drawer"></i> Project Type</a>
+                <a href="{!! route('admin.projecttype.index') !!}" class="nav-link {!! LP_lib::setActive(2,'projecttype') !!}"><i class="icon-drawer"></i> Project Type</a>
             </li>
             <li class="nav-item">
-                <a href="{!! route('admin.project.index') !!}" class="nav-link active"><i class="icon-drawer"></i> Project</a>
+                <a href="{!! route('admin.project.index') !!}" class="nav-link {!! LP_lib::setActive(2,'project') !!}"><i class="icon-drawer"></i> Projects</a>
             </li>
 
             <li class="divider"></li>
 
+            <li class="nav-item">
+                <a href="{!! route('admin.company.index') !!}" class="nav-link {!! LP_lib::setActive(2,'company') !!}"><i class="icon-drawer"></i> Information</a>
+            </li>
         </ul>
     </nav>
     <button class="sidebar-minimizer brand-minimizer" type="button"></button>

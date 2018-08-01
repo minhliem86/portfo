@@ -1,6 +1,7 @@
 <?php
 return [
   'modules' => [
-    'Admin',
+      'Admin',
+      'Frontend'
   ]
 ];

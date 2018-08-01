@@ -3,17 +3,10 @@
 @section('title','SKILL')
 
 @section('content')
-    @if($errors->any())
-        <div class="alert alert-danger alert-dismissable">
-            @foreach($errors->all() as $error)
-                <p>{!! $error !!}</p>
-            @endforeach
-        </div>
-    @endif
     <div class="row">
         <div class="col">
             <div class="card">
-                {!! Form::open(['route'=>'admin.skill.store', 'class' =>'form']) !!}
+                {!! Form::open(['route'=>'admin.service.store', 'class' =>'form']) !!}
                 <div class="card-header">
                     <strong>SKILL</strong>
                 </div>
@@ -21,14 +14,13 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label" for="name">Name</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="name">
+                            {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
                         </div>
                     </div>
-
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="power">Power</label>
+                        <label class="col-md-3 col-form-label" for="description">Description</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="power">
+                            {!! Form::textarea('description', '', old('desctiption'), ['class' => 'form-control']) !!}
                         </div>
                     </div>
 

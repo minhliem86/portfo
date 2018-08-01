@@ -26,6 +26,7 @@
 $factory->define(App\Models\Skill::class, function (Faker\Generator $faker){
      return [
          'name' => $faker->name,
+         'power' => $faker->numberBetween(50, 100),
          'img_url' => $faker->imageUrl(300,300),
      ];
 });
@@ -42,4 +43,12 @@ $factory->define(App\Models\Project::class, function (Faker\Generator $faker){
        'img_url' => $faker->imageUrl(300,300),
 
    ] ;
+});
+
+$factory->define(App\Models\Service::class, function(Faker\Generator $faker) {
+   return [
+       'name' => $faker->name,
+       'description' => $faker->paragraph,
+       'img_url' => $faker->imageUrl(25,25),
+   ];
 });

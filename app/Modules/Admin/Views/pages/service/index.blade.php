@@ -67,7 +67,6 @@
                 columns: [
                     {data: 'id', name: 'id', 'orderable': false, title: '#', visible: false},
                     {data: 'name', name: 'Skill', title: 'Skill'},
-                    {data: 'power', name: 'Power', title: 'Power'},
                     {data: 'img_url', name: 'Hình ảnh', title: 'Hình Ảnh', 'orderable': false},
                     {data: 'order', name: 'Sắp xếp', title: 'Sắp xếp'},
                     {data: 'status', name: 'Trạng thái', title: 'Trạng Thái'},
