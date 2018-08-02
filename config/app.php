@@ -187,7 +187,7 @@ return [
         Codingo\Dropzoner\DropzonerServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        App\Modules\ModuleServiceProvider::class,
+        App\Modules\ModuleServiceProvider::class
 
     ],
 
@@ -246,6 +246,7 @@ return [
         'Notification' => Krucas\Notification\Facades\Notification::class,
         'Laratrust'   => Laratrust\LaratrustFacade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Str'   => Illuminate\Support\Str::class,
 
     ],
 

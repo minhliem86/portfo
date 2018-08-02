@@ -109,19 +109,16 @@
 
             <div class="row">
                 <div class="col-md-12 service-list">
+                    @if(!$services->isEmpty())
+                        @foreach($services as $k=>$service)
                     <div class="single-service">
-                        <div class="service-img" style="background-image: url({!! asset('public/assets/frontend') !!}/img/service/1.png) "></div>
-                        <h3>Web development</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non vel, sint nisi possimus sunt veritatis.</p>
-                        <div class="service-overlay text-left">
-                            <ul class="clearfix">
-                                <li><i class="fa fa-check"></i> Web Template design</li>
-                                <li><i class="fa fa-check"></i> Static website design </li>
-                                <li><i class="fa fa-check"></i> Custom web design </li>
-                                <li><i class="fa fa-check"></i> Responsive web design </li>
-                            </ul>
-                        </div>
+                        <div class="service-img" style="background-image: url({!! asset('public/assets/frontend') !!}/img/service/{!! $k+1 !!}.png)"></div>
+                        <h3>{!! $service->name !!}</h3>
+                        <p>{!! Str::words($service->description, 25) !!}</p>
+
                     </div>
+                        @endforeach
+                    @endif
                 </div>
             </div> <!--/.row-->
         </div> <!--/.container-->
@@ -143,26 +140,18 @@
                 </div>
             </div> <!--/.row-->
 
-            <div class="row">
-                <ul class="work-list text-center">
-                    <li class="filter" data-filter="all">all</li>
-                    <li class="filter" data-filter=".medias">media</li>
-                    <li class="filter" data-filter=".illustration">illustration</li>
-                    <li class="filter" data-filter=".branding">Branding</li>
-                </ul>
-            </div> <!--/.row-->
-
             <div class="work-inner">
                 <div class="row">
+                    @if(!$projects->isEmpty())
+                        @foreach($projects as $project)
                     <div class="col-md-4 col-sm-6 col-xs-12 mix medias"> <!-- Single Work -->
                         <div class="single-work">
-                            <img src="{!! asset('public/assets/frontend') !!}/img/work/1.jpg" alt="">
+                            <img src="{!! $project->img_url !!}" class="img-fluid" alt="">
                             <div class="item-hover">
                                 <div class="work-table">
                                     <div class="work-tablecell">
                                         <div class="hover-content">
-                                            <h4>Creative Work</h4>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                            <h4>{!! $project->name !!}</h4>
                                             <a href="{!! asset('public/assets/frontend') !!}/img/work/1.jpg" class="work-popup"><i class="fa fa-search-plus"></i></a>
                                             <a href="creative_two.html#"><i class="fa fa-chain-broken"></i></a>
                                         </div>
@@ -171,91 +160,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 mix branding"> <!-- Single Work -->
-                        <div class="single-work">
-                            <img src="{!! asset('public/assets/frontend') !!}/img/work/2.jpg" alt="">
-                            <div class="item-hover">
-                                <div class="work-table">
-                                    <div class="work-tablecell">
-                                        <div class="hover-content">
-                                            <h4>Creative Work</h4>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                            <a href="{!! asset('public/assets/frontend') !!}/img/work/2.jpg" class="work-popup"><i class="fa fa-search-plus"></i></a>
-                                            <a href="creative_two.html#"><i class="fa fa-chain-broken"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 mix illustration"> <!-- Single Work -->
-                        <div class="single-work">
-                            <img src="{!! asset('public/assets/frontend') !!}/img/work/3.jpg" alt="">
-                            <div class="item-hover">
-                                <div class="work-table">
-                                    <div class="work-tablecell">
-                                        <div class="hover-content">
-                                            <h4>Creative Work</h4>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                            <a href="{!! asset('public/assets/frontend') !!}/img/work/3.jpg" class="work-popup"><i class="fa fa-search-plus"></i></a>
-                                            <a href="creative_two.html#"><i class="fa fa-chain-broken"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 mix branding"> <!-- Single Work -->
-                        <div class="single-work">
-                            <img src="{!! asset('public/assets/frontend') !!}/img/work/4.jpg" alt="">
-                            <div class="item-hover">
-                                <div class="work-table">
-                                    <div class="work-tablecell">
-                                        <div class="hover-content">
-                                            <h4>Creative Work</h4>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                            <a href="{!! asset('public/assets/frontend') !!}/img/work/4.jpg" class="work-popup"><i class="fa fa-search-plus"></i></a>
-                                            <a href="creative_two.html#"><i class="fa fa-chain-broken"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 mix medias"> <!-- Single Work -->
-                        <div class="single-work">
-                            <img src="{!! asset('public/assets/frontend') !!}/img/work/5.jpg" alt="">
-                            <div class="item-hover">
-                                <div class="work-table">
-                                    <div class="work-tablecell">
-                                        <div class="hover-content">
-                                            <h4>Creative Work</h4>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                            <a href="{!! asset('public/assets/frontend') !!}/img/work/5.jpg" class="work-popup"><i class="fa fa-search-plus"></i></a>
-                                            <a href="creative_two.html#"><i class="fa fa-chain-broken"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 mix illustration"> <!-- Single Work -->
-                        <div class="single-work">
-                            <img src="{!! asset('public/assets/frontend') !!}/img/work/6.jpg" alt="">
-                            <div class="item-hover">
-                                <div class="work-table">
-                                    <div class="work-tablecell">
-                                        <div class="hover-content">
-                                            <h4>Creative Work</h4>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                            <a href="{!! asset('public/assets/frontend') !!}/img/work/6.jpg" class="work-popup"><i class="fa fa-search-plus"></i></a>
-                                            <a href="creative_two.html#"><i class="fa fa-chain-broken"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
                 </div> <!--/.row-->
             </div>
         </div><!--/.container-->
@@ -266,47 +172,36 @@
     <div class="stat-area section-padding" style="background-image: url({!! asset('public/assets/frontend') !!}/img/stat-bg.jpg);">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-stat">
                         <div class="icon">
                             <i class="fa fa-user"></i>
                         </div>
                         <div class="count-stat">
-                            <h3><span class="count">138</span></h3>
+                            <h3><span class="count">40</span></h3>
                             <h4>Happy Clients</h4>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-stat">
                         <div class="icon">
                             <i class="fa fa-calendar"></i>
                         </div>
                         <div class="count-stat">
-                            <h3><span class="count">15</span></h3>
-                            <h4>years of success</h4>
+                            <h3><span class="count">5</span></h3>
+                            <h4>years of experience</h4>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="single-stat">
                         <div class="icon">
                             <i class="fa fa-thumbs-up"></i>
                         </div>
                         <div class="count-stat">
-                            <h3><span class="count">275</span></h3>
+                            <h3><span class="count">87</span></h3>
                             <h4>Projects done</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="single-stat">
-                        <div class="icon">
-                            <i class="fa fa-trophy"></i>
-                        </div>
-                        <div class="count-stat">
-                            <h3><span class="count">23</span></h3>
-                            <h4>Award Won</h4>
                         </div>
                     </div>
                 </div>
@@ -353,7 +248,7 @@
                         </div>
                         <div class="info-content">
                             <h5>my location:</h5>
-                            <p>3481 Melrose Place, Beverly <br> Hills CA 90210</p>
+                            <p>{!! $homestay->address !!}</p>
                         </div>
                     </div>
                 </div>
@@ -364,8 +259,7 @@
                         </div>
                         <div class="info-content">
                             <h5>Phone number:</h5>
-                            <p>(+1) 517 397 7100</p>
-                            <p>(+1) 515 997 5130</p>
+                            <p>{!! $homestay->phone !!}</p>
                         </div>
                     </div>
                 </div>
@@ -376,8 +270,7 @@
                         </div>
                         <div class="info-content">
                             <h5>email address:</h5>
-                            <p>info@kazo.com</p>
-                            <p>admin@kazo.com</p>
+                            <p>{!! $homestay->email !!}</p>
                         </div>
                     </div>
                 </div>

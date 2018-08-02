@@ -52,3 +52,12 @@ $factory->define(App\Models\Service::class, function(Faker\Generator $faker) {
        'img_url' => $faker->imageUrl(25,25),
    ];
 });
+
+$factory->define(App\Models\Company::class, function(){
+   return [
+       'table_name' => 'personal_info',
+       'email' =>'minhliemphp@gmail.com',
+       'address' => '128 Lê Quang Định F:14, Q: Bình Thạnh, HCM',
+       'phone' => '0902 942 054 - 09186 91860'
+   ];
+});

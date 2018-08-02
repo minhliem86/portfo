@@ -10,7 +10,8 @@ class DatabaseSeeder extends Seeder
             'skills',
             'project_types',
             'projects',
-            'services'
+            'services',
+            'companies'
 
         ];
 
@@ -18,7 +19,8 @@ class DatabaseSeeder extends Seeder
         [
             ProjectTypeSeeder::class,
             SkillSeeder::class,
-            ServiceSeeder::class
+            ServiceSeeder::class,
+            PersonalSeeder::class
         ];
 
     /**
