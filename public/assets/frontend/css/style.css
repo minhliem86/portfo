@@ -895,7 +895,7 @@ ul.work-list li.active{
  .t-author {
      padding-left: 85px;
      padding-top: 30px;
-     background-image: url(assets/img/arrow-line.png);
+     background-image: url(../img/arrow-line.png);
      background-repeat: no-repeat;
      background-position: left top;
  }
