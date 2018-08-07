@@ -20,11 +20,11 @@
                 <nav class="main-menu">
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav"> <!--== manin menu ==-->
-                            <li class="active"><a class="smoth-scroll" href="creative_two.html#home">Home</a></li>
-                            <li><a class="smoth-scroll" href="creative_two.html#about">About</a></li>
-                            <li><a class="smoth-scroll" href="creative_two.html#services">service</a></li>
-                            <li><a class="smoth-scroll" href="creative_two.html#work">work</a></li>
-                            <li><a class="smoth-scroll" href="creative_two.html#contact">contact</a></li>
+                            <li class="active"><a class="smoth-scroll" href="#home">Home</a></li>
+                            <li><a class="smoth-scroll" href="#about" target="#about">About</a></li>
+                            <li><a class="smoth-scroll" href="#services" target="#services">service</a></li>
+                            <li><a class="smoth-scroll" href="#work" target="#work">work</a></li>
+                            <li><a class="smoth-scroll" href="#contact" target="#contact">contact</a></li>
                         </ul>
                     </div>
                 </nav>

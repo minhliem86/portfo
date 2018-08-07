@@ -40,7 +40,7 @@ $factory->define(App\Models\ProjectTypes::class, function (Faker\Generator $fake
 $factory->define(App\Models\Project::class, function (Faker\Generator $faker){
    return [
        'name' => $faker->name,
-       'img_url' => $faker->imageUrl(300,300),
+       'img_url' => $faker->imageUrl(360,300),
 
    ] ;
 });

@@ -82,12 +82,12 @@
     <script src="{!! asset('public/assets/frontend') !!}/js/custom-google-map.js"></script>
 
     <!-- google map api js -->
-    <script src="../../../../maps.googleapis.com/maps/api/js%3Fkey=AIzaSyAmPkfTPQOB5ZHqTVOMYRDmcKOgRLTClkU&amp;region=US"></script>
-
-    <!--== contact js ==-->
-    <script src="{!! asset('public/assets/frontend') !!}/js/contact.js"></script>
+    <script src="../../../../maps.googleapis.com/maps/api/js%3Fkey=AIzaSyDjKpz6PvzjF3OACVc4qKWjcHwg4AiiNhc&amp;region=US"></script>
 
     <!--== main js ==-->
     <script src="{!! asset('public/assets/frontend') !!}/js/main.js"></script>
+
+    @yield('script')
+
 </body>
 </html>

@@ -19,8 +19,8 @@
                                         </span>
                                 </h1>
                                 <div class="about-btn">
-                                    <a class="smoth-scroll" href="creative_two.html#work"><i class="fa fa-briefcase"></i>my projects</a>
-                                    <a class="btn-black" href="creative_two.html#"><i class="fa fa-rocket"></i>Hire Me</a>
+                                    <a class="smoth-scroll" href="#work"><i class="fa fa-briefcase"></i>my projects</a>
+                                    <a class="btn-black smoth-scroll" href="#contact"><i class="fa fa-rocket"></i>Hire Me</a>
                                 </div>
 
                             </div>
@@ -218,7 +218,7 @@
                 <div class="col-md-12 text-center">
                     <p class="wow fadeInLeft" data-wow-delay="0.4s">Do you have any project?</p>
                     <h2 class="wow fadeInRight" data-wow-delay="0.8s">Let's work together indeed!</h2>
-                    <a href="creative_two.html#" class="wow fadeInDown" data-wow-delay="1.2s"><i class="fa fa-user"></i>hire me</a>
+                    <a href="#contact" class="wow fadeInDown smoth-scroll" data-wow-delay="1.2s"><i class="fa fa-user"></i>hire me</a>
                 </div>
             </div>
         </div>
@@ -279,7 +279,8 @@
             <div class="row">
                 <div class="col-md-7">
                     <div class="contact-form">
-                        <form id="contact-form" method="post" action="http://mhbthemes.com/demos/kazo/kazo/contact.php"> <!-- Start Contact From -->
+                        <form id="contact-form" method="post" action="{!! route('frontend.contact.post') !!}"> <!-- Start Contact From -->
+                            {!! Form::token() !!}
                             <div class="messages"></div>
                             <div class="controls">
                                 <div class="row">
@@ -327,5 +328,24 @@
         </div> <!--/.container-->
     </div>
     <!--===== END CONTACT INFO AREA ======-->
+@stop
+
+@section('script')
+    <!-- POPUP -->
+    <link rel="stylesheet" href="{!! asset('public/assets/frontend') !!}/js/popup/sweetalert.css">
+    <script src="{!! asset('public/assets/frontend') !!}/js/popup/sweetalert.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#contact-form').validator();
+
+            /*SCROLL*/
+            @if(Session::has('success'))
+             swal({!! Session::get('success') !!}, '', "success");
+            @endif
+
+        })
+    </script>
 @stop
 
