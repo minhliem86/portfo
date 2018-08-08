@@ -342,7 +342,7 @@
 
             /*SCROLL*/
             @if(Session::has('success'))
-             swal({!! Session::get('success') !!}, '', "success");
+             swal('abc', '', "success");
             @endif
 
         })

@@ -18,14 +18,14 @@ class RequestController extends Controller
     public function postContact(Request $request)
     {
         $data = [
-            $fullname = $request->input('name'),
-            $email =  $request->input('email'),
-            $subject = $request->input('subject'),
-            $message = $request->input('message'),
+            'fullname' => $request->input('name'),
+            'email' =>  $request->input('email'),
+            'subject' => $request->input('subject'),
+            'message' => $request->input('message'),
         ];
 
         $this->contact->create($data);
 
-        return back()->with('succes','Thanks for your feedback!');
+        return back()->with('success','Thanks for your feedback!');
     }
 }

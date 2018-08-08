@@ -4,5 +4,5 @@ Route::namespace('App\Modules\Frontend\Controllers')
     ->name('frontend.')
     ->group(function(){
         Route::get('/', 'HomeController@index')->name('index');
-        Route::post('/lien-he','ContactController@postContact')->name('contact.post');
+        Route::post('/lien-he','RequestController@postContact')->name('contact.post');
     });
