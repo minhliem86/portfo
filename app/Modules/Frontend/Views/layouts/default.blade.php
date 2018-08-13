@@ -82,7 +82,7 @@
     <script src="{!! asset('public/assets/frontend') !!}/js/custom-google-map.js"></script>
 
     <!-- google map api js -->
-    <script src="../../../../maps.googleapis.com/maps/api/js%3Fkey=AIzaSyDjKpz6PvzjF3OACVc4qKWjcHwg4AiiNhc&amp;region=US"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUxBgcE7vcu0GU9BuMQMe4qusYG7cSX5k&callback=initMap"></script>
 
     <!--== main js ==-->
     <script src="{!! asset('public/assets/frontend') !!}/js/main.js"></script>

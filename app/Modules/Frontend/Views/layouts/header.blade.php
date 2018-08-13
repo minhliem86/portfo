@@ -12,7 +12,7 @@
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <a class="theme-color" href="creative_two.html">RST</a> <!--== logo ==-->
+                    <a class="theme-color" href="{!! route('frontend.index') !!}">RST</a> <!--== logo ==-->
                 </div>
             </div>
 
@@ -22,8 +22,8 @@
                         <ul class="nav navbar-nav"> <!--== manin menu ==-->
                             <li class="active"><a class="smoth-scroll" href="#home">Home</a></li>
                             <li><a class="smoth-scroll" href="#about" target="#about">About</a></li>
-                            <li><a class="smoth-scroll" href="#services" target="#services">service</a></li>
-                            <li><a class="smoth-scroll" href="#work" target="#work">work</a></li>
+                            <li><a class="smoth-scroll" href="#services" target="#services">Service</a></li>
+                            <li><a class="smoth-scroll" href="#work" target="#work">Work</a></li>
                             <li><a class="smoth-scroll" href="#contact" target="#contact">contact</a></li>
                         </ul>
                     </div>

@@ -187,7 +187,9 @@ return [
         Codingo\Dropzoner\DropzonerServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        App\Modules\ModuleServiceProvider::class
+        App\Modules\ModuleServiceProvider::class,
+        Dingo\Api\Provider\LaravelServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class
 
     ],
 
@@ -247,6 +249,8 @@ return [
         'Laratrust'   => Laratrust\LaratrustFacade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Str'   => Illuminate\Support\Str::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
 
     ],
 
