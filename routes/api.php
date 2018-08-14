@@ -14,6 +14,6 @@ use Illuminate\Http\Request;
 */
 $api = app('Dingo\Api\Routing\Router');
 
-$api->version('v1', function ($api){
-   $api->get('/skill','');
+$api->version('v1',['namespace'=>'App\Modules\Api\Controllers'], function ($api){
+//   $api->get('/skill','');
 });

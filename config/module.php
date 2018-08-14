@@ -2,6 +2,7 @@
 return [
   'modules' => [
       'Admin',
-      'Frontend'
+      'Frontend',
+      'Api'
   ]
 ];
