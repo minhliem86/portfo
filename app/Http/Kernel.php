@@ -51,6 +51,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'guest.admin' => \App\Modules\Admin\Middlewares\AdminRedirectIfAuthMiddleware::class,
         'can_login' => \App\Modules\Admin\Middlewares\CheckCanLoginMiddleware::class,
-        'check_admin' => \App\Modules\Admin\Middlewares\CheckIsAdminMiddleware::class
+        'check_admin' => \App\Modules\Admin\Middlewares\CheckIsAdminMiddleware::class,
+        'jwt.auth' => 'Tymon\JWTAuth\Middleware\GetUserFromToken',
+        'jwt.refresh' => 'Tymon\JWTAuth\Middleware\RefreshToken',
     ];
 }
