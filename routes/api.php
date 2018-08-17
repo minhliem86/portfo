@@ -15,8 +15,13 @@ use Illuminate\Http\Request;
 $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1',['namespace'=>'App\Modules\Api\Controllers'], function ($api){
-   $api->get('/skill','SkillController@index');
-   $api->post('/auth','AuthController@authenticate');
-   $api->post('/logout', 'AuthController@logout');
-   $api->get('/refresh-token', 'AuthController@getToken');
+    $api->post('/register','AuthController@register');
+    $api->post('/auth','AuthController@authenticate');
+    $api->post('/logout', 'AuthController@logout');
+    $api->get('/refresh-token', 'AuthController@getToken');
 });
+
+$api->version('v1', ['namespace'=>'App\Modules\Api\Controllers', 'middleware'=> 'jwt.auth'],function($api){
+   $api->get('/skill', 'SkillController@index');
+});
+
