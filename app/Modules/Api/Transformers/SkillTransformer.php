@@ -17,7 +17,7 @@ class SkillTransformer extends TransformerAbstract
         return [
             'id' => (int) $skill->id,
             'name' => ucfirst($skill->name),
-            'power' => (int) $skill->power,
+            'power' => (int) $skill->percent,
             'img_url' => $skill->img_url,
         ];
     }

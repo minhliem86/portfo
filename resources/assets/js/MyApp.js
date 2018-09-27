@@ -1,16 +1,22 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
+import Login from "./components/static/Login";
+import {Main} from './components/static/Main';
 
-class MyApp extends Component{
+class MyApp extends Component
+    {
+        render(){
+            let ele = null;
+            if(!localStorage.getItem('jwt')){
+                ele = <Login />;
+            }else{
+                ele = <Main />
+            }
+            return (
+                <div>
+                    {ele}
+                </div>
+            )
+        }
+    }
 
-    handleClick(id){
-        alert('test' + id);
-    }
-    render() {
-        return (
-            <div className="myapp">
-                <button className="btn btn-primary" type="button" onClick={(2) => this.handleClick.bind(this)}>Test</button>
-            </div>
-        )
-    }
-}
 export default MyApp;
