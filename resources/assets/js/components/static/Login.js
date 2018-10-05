@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
+import {Field, reduxForm} from 'redux-form'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {loginReducer} from "../../reducers/loginReducer";
+import {postLogin} from "../../actions/loginAction";
 import {Redirect} from 'react-router-dom';
 
 class Login extends Component{
 
-
+    handleSubmit(e){
+        e.preventDefault();
+        let {email} = this.props;
+        console.log(email);
+    }
     render(){
         if(this.props.stateLogin.isLogin){
             <Redirect to={`/home`}/>
@@ -21,19 +26,18 @@ class Login extends Component{
                                 ĐĂNG NHẬP
                             </h3>
                             <div className="form-wrapper">
-                                <form action="">
+                                <form action="" onSubmit={this.handleSubmit.bind(this)}>
                                     <div className="form-group">
-                                        <input type="email" className="form-control" placeholder="Enter Email" />
+                                        <Field name={`email`} component={`input`} type={`email`} placeholder={`Enter Email`} className={`form-control`}/>
                                     </div>
                                     <div className="form-group">
-                                        <input type="password" className="form-control" placeholder="Enter Password" />
+                                        <Field name={`password`} component={`input`} type={`password`} placeholder={`Enter Password`} className={`form-control`}/>
                                     </div>
                                     <div className="form-group">
                                         <button type="submit" className="btn btn-primary">Đăng nhập</button>
                                     </div>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -50,9 +54,14 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({
-        loginReducer
+        postLogin
     }, dispatch)
 }
 
+Login = connect(
+    mapStateToProps, mapDispatchToProps
+)(Login);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default reduxForm({
+    form : 'loginForm'
+})(Login)
