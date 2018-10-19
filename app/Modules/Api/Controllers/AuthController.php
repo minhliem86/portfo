@@ -13,6 +13,7 @@ use Hash;
 
 class AuthController extends Controller
 {
+
     public function authenticate(Request $request)
     {
         // grab credentials from the request

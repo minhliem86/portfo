@@ -1,22 +1,19 @@
 import React, {Component, Fragment} from 'react';
-import Login from "./components/static/Login";
-import {Main} from './components/static/Main';
+import Main from './components/static/Main';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
-class MyApp extends Component
-    {
-        render(){
-            let ele = null;
-            if(!localStorage.getItem('jwt')){
-                ele = <Login />;
-            }else{
-                ele = <Main />
-            }
-            return (
-                <div>
-                    {ele}
-                </div>
-            )
-        }
+class MyApp extends Component {
+    render(){
+        return (
+            <Main loginState = {this.props.loginState}  />
+        )
     }
+}
 
-export default MyApp;
+function mapStateToProps(state) {
+    return {
+        loginState: state.loginReducer
+    }
+}
+export default connect(mapStateToProps, null, null, {pure: false})(MyApp);
